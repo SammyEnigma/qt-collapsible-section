@@ -118,7 +118,7 @@ QString Section::toolTip() const {
 
 QString Section::whatsThis() const
 {
-    return tr("Cool collpasible and expanble section widget");
+    return tr("Cool collapsible and expandable section widget");
 }
 
 bool Section::isContainer() const
