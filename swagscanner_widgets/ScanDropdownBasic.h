@@ -1,5 +1,5 @@
-#ifndef QT_COLLAPSIBLE_SECTION_CALIBRATIONDROPDOWN1_H
-#define QT_COLLAPSIBLE_SECTION_CALIBRATIONDROPDOWN1_H
+#ifndef QT_COLLAPSIBLE_SECTION_SCANDROPDOWNBASIC_H
+#define QT_COLLAPSIBLE_SECTION_SCANDROPDOWNBASIC_H
 
 #include "Section.h"
 #include <QFrame>
@@ -12,10 +12,10 @@
 #include <QtDesigner>
 
 
-class QDESIGNER_WIDGET_EXPORT CalibrationDropdownBasic : public QWidget, public QDesignerCustomWidgetInterface {
+class QDESIGNER_WIDGET_EXPORT ScanDropdownBasic : public QWidget, public QDesignerCustomWidgetInterface {
 Q_OBJECT
     Q_INTERFACES(QDesignerCustomWidgetInterface)
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QCalibrationDropdownBasic")
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QScanDropdownBasic")
 
 private:
 
@@ -33,7 +33,7 @@ signals:
     void rotationSliderValueChanged(int x);
 
 public:
-    explicit CalibrationDropdownBasic(const QString &title = "", const int animationDuration = 100,
+    explicit ScanDropdownBasic(const QString &title = "", const int animationDuration = 100,
                                       QWidget *parent = 0);
 
     QString name() const;
@@ -54,4 +54,4 @@ public:
 };
 
 
-#endif //QT_COLLAPSIBLE_SECTION_CALIBRATIONDROPDOWN1_H
+#endif //QT_COLLAPSIBLE_SECTION_SCANDROPDOWNBASIC_H

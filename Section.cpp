@@ -130,6 +130,3 @@ QWidget *Section::createWidget(QWidget *parent)
 {
     return new Section("", 100, parent);
 }
-
-Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
-Q_INTERFACES(QDesignerCustomWidgetInterface)
