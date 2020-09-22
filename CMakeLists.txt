@@ -1,0 +1,42 @@
+cmake_minimum_required(VERSION 3.17)
+project(qt_collapsible_section)
+
+option(BUILD_SWAG_SCANNER "Build swagscanner widgets" OFF)
+
+set(CMAKE_CXX_STANDARD 17)
+set(Qt5_DIR "/usr/local/opt/qt/lib/cmake/Qt5")
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(Qt5 COMPONENTS Core Widgets Quick Designer REQUIRED)
+add_definitions(${QT_DEFINITIONS})
+
+get_target_property(QT_QMAKE_EXECUTABLE Qt5::qmake LOCATION)
+execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} -query QT_INSTALL_PLUGINS
+        OUTPUT_VARIABLE QT_INSTALL_PLUGINS OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+
+if (BUILD_SWAG_SCANNER)
+    add_subdirectory(swagscanner_widgets)
+
+else ()
+    include_directories(.)
+
+    add_library(qt_collapsible_section SHARED
+            Section.cpp
+            Section.h)
+
+    target_link_libraries(qt_collapsible_section Qt5::Quick Qt5::Core Qt5::Widgets Qt5::Designer)
+    add_executable(exe main.cpp mainwindow.h mainwindow.cpp mainwindow.ui)
+    target_link_libraries(exe qt_collapsible_section)
+    install(TARGETS qt_collapsible_section
+            DESTINATION ${QT_INSTALL_PLUGINS}/designer
+            )
+endif ()
+
+
+
+
