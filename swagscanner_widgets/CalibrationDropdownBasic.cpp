@@ -23,15 +23,14 @@ CalibrationDropdownBasic::CalibrationDropdownBasic(const QString &title, const i
         f->setNum(value * 3);
     });
     angle_slider->setRange(0, 10);
-    angle_slider->setValue(4);
+    angle_slider->setValue(3);
 
     auto g = this->rotation_value_label;
     QObject::connect(rotation_slider, &QSlider::valueChanged, [g, x, v](int value) {
-        g->setNum(value);
+        g->setNum(value * 3);
     });
-    rotation_slider->setRange(0, 30);
-    rotation_slider->setValue(10); // it's like bugged, need to set 3 before 4 displays
-    rotation_slider->setValue(8);
+    rotation_slider->setRange(0, 10);
+    rotation_slider->setValue(4);
 
     // right justify labels
     angle_label->setAlignment(Qt::AlignRight);

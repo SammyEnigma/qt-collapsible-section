@@ -1,5 +1,5 @@
-#ifndef QT_COLLAPSIBLE_SECTION_SCANDROPDOWNBASIC_H
-#define QT_COLLAPSIBLE_SECTION_SCANDROPDOWNBASIC_H
+#ifndef SCANDROPDOWNBASIC_H
+#define SCANDROPDOWNBASIC_H
 
 #include "Section.h"
 #include <QFrame>
@@ -34,7 +34,7 @@ signals:
 
 public:
     explicit ScanDropdownBasic(const QString &title = "", const int animationDuration = 100,
-                                      QWidget *parent = 0);
+                               QWidget *parent = 0);
 
     QString name() const;
 
@@ -54,4 +54,4 @@ public:
 };
 
 
-#endif //QT_COLLAPSIBLE_SECTION_SCANDROPDOWNBASIC_H
+#endif //SCANDROPDOWNBASIC_H
