@@ -43,7 +43,8 @@ private:
     QFrame* headerLine;
     QParallelAnimationGroup* toggleAnimation;
     QScrollArea* contentArea;
-    int animationDuration;
+    int animationDuration = 100;
+    QString title = "Section"
 
 
 public slots:
@@ -52,7 +53,7 @@ public slots:
 
 
 public:
-    explicit Section(const QString & title = "", const int animationDuration = 100, QWidget* parent = 0);
+    explicit Section(QWidget* parent = 0);
 
     void setContentLayout(QLayout & contentLayout);
 

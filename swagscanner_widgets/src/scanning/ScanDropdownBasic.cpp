@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-ScanDropdownBasic::ScanDropdownBasic(const QString &title, const int animationDuration, QWidget *parent)
+ScanDropdownBasic::ScanDropdownBasic(QWidget *parent)
         : QWidget(parent),
           angle_label(new QLabel("angle")),
           angle_value_label(new QLabel()),
@@ -36,7 +36,7 @@ ScanDropdownBasic::ScanDropdownBasic(const QString &title, const int animationDu
     angle_label->setAlignment(Qt::AlignRight);
     rotation_label->setAlignment(Qt::AlignRight);
 
-    sec = new Section(title, animationDuration, this);
+    sec = new Section("Basic", 100, this);
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(sec);
     layout->setMargin(0);
@@ -96,5 +96,5 @@ bool ScanDropdownBasic::isContainer() const {
 }
 
 QWidget *ScanDropdownBasic::createWidget(QWidget *parent) {
-    return new ScanDropdownBasic("Basic", 100, parent);
+    return new ScanDropdownBasic(parent);
 }

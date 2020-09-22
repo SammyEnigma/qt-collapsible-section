@@ -22,8 +22,8 @@
 
 #include "Section.h"
 
-Section::Section(const QString &title, const int animationDuration, QWidget *parent)
-        : QWidget(parent), animationDuration(animationDuration) {
+Section::Section(QWidget *parent)
+        : QWidget(parent) {
     toggleButton = new QToolButton(this);
     headerLine = new QFrame(this);
     toggleAnimation = new QParallelAnimationGroup(this);

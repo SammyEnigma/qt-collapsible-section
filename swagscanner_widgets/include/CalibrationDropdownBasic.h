@@ -29,12 +29,13 @@ private:
     Section *sec;
 
 signals:
+
     void angleSliderValueChanged(int x);
+
     void rotationSliderValueChanged(int x);
 
 public:
-    explicit CalibrationDropdownBasic(const QString &title = "", const int animationDuration = 100,
-                                      QWidget *parent = 0);
+    explicit CalibrationDropdownBasic(QWidget *parent = 0);
 
     QString name() const;
 

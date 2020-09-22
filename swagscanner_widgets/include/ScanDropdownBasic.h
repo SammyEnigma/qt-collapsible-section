@@ -33,8 +33,7 @@ signals:
     void rotationSliderValueChanged(int x);
 
 public:
-    explicit ScanDropdownBasic(const QString &title = "", const int animationDuration = 100,
-                               QWidget *parent = 0);
+    explicit ScanDropdownBasic(QWidget *parent = 0);
 
     QString name() const;
 

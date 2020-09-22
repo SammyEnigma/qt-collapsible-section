@@ -33,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    auto* section = new CalibrationDropdownBasic("Basic", 300, ui->centralWidget);
+    auto* section = new CalibrationDropdownBasic(ui->centralWidget);
     ui->centralWidget->layout()->addWidget(section);
 
 }

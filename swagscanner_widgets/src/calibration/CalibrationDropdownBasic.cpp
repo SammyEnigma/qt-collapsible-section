@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-CalibrationDropdownBasic::CalibrationDropdownBasic(const QString &title, const int animationDuration, QWidget *parent)
+CalibrationDropdownBasic::CalibrationDropdownBasic(QWidget *parent)
         : QWidget(parent),
           angle_label(new QLabel("angle")),
           angle_value_label(new QLabel()),
@@ -36,7 +36,7 @@ CalibrationDropdownBasic::CalibrationDropdownBasic(const QString &title, const i
     angle_label->setAlignment(Qt::AlignRight);
     rotation_label->setAlignment(Qt::AlignRight);
 
-    sec = new Section(title, animationDuration, this);
+    sec = new Section("Basic", 100, this);
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(sec);
     layout->setMargin(0);
@@ -96,5 +96,5 @@ bool CalibrationDropdownBasic::isContainer() const {
 }
 
 QWidget *CalibrationDropdownBasic::createWidget(QWidget *parent) {
-    return new CalibrationDropdownBasic("Basic", 100, parent);
+    return new CalibrationDropdownBasic(parent);
 }
