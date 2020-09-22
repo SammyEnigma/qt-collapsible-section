@@ -27,43 +27,31 @@
 #include <QScrollArea>
 #include <QToolButton>
 #include <QWidget>
-#include <QDesignerCustomWidgetInterface>
-#include <QtDesigner>
 
 
-class QDESIGNER_WIDGET_EXPORT Section : public QWidget, public QDesignerCustomWidgetInterface {
-    Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDummyPlugin")
+class Section : public QWidget {
+Q_OBJECT
 
 private:
 
-    QGridLayout* mainLayout;
-    QToolButton* toggleButton;
-    QFrame* headerLine;
-    QParallelAnimationGroup* toggleAnimation;
-    QScrollArea* contentArea;
-    int animationDuration;
+QGridLayout* mainLayout;
+QToolButton* toggleButton;
+QFrame* headerLine;
+QParallelAnimationGroup* toggleAnimation;
+QScrollArea* contentArea;
+int animationDuration;
 
 
 public slots:
 
-    void toggle(bool collapsed);
+void toggle(bool collapsed);
 
 
 public:
-    explicit Section(const QString & title = "", const int animationDuration = 100, QWidget* parent = 0);
+explicit Section(const QString & title = "", const int animationDuration = 100, QWidget* parent = 0);
 
-    void setContentLayout(QLayout & contentLayout);
+void setContentLayout(QLayout & contentLayout);
 
-    QString name() const;
-    QString includeFile() const;
-    QString group() const;
-    QIcon icon() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    bool isContainer() const;
-    QWidget *createWidget(QWidget *parent);
 };
 
 #endif // SECTION_H
