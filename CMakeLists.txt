@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(qt_collapsible_section)
 
-option(BUILD_SWAG_SCANNER "Build swagscanner widgets" OFF)
+option(BUILD_SWAG_SCANNER_WIDGETS "Build swagscanner widgets" OFF)
 
 set(CMAKE_CXX_STANDARD 17)
 set(Qt5_DIR "/usr/local/opt/qt/lib/cmake/Qt5")
@@ -19,7 +19,7 @@ execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} -query QT_INSTALL_PLUGINS
         OUTPUT_VARIABLE QT_INSTALL_PLUGINS OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 
-if (BUILD_SWAG_SCANNER)
+if (BUILD_SWAG_SCANNER_WIDGETS)
     add_subdirectory(swagscanner_widgets)
 
 else ()
