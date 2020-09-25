@@ -35,6 +35,10 @@ signals:
     void rotationSliderValueChanged(int x);
 
 public:
+    int get_rotation_slider_value();
+
+    int get_angle_slider_value();
+
     explicit CalibrationDropdownBasic(QWidget *parent = 0);
 
     QString name() const;

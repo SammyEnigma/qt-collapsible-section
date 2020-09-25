@@ -62,6 +62,15 @@ CalibrationDropdownBasic::CalibrationDropdownBasic(QWidget *parent)
     sec->setContentLayout(*section_layout);
 }
 
+int CalibrationDropdownBasic::get_rotation_slider_value() {
+    return rotation_slider->value();
+}
+
+int CalibrationDropdownBasic::get_angle_slider_value() {
+    return angle_slider->value();
+}
+
+
 
 // --------------------------------------------------------------------------------
 //                          QCustomWidget methods
@@ -98,3 +107,4 @@ bool CalibrationDropdownBasic::isContainer() const {
 QWidget *CalibrationDropdownBasic::createWidget(QWidget *parent) {
     return new CalibrationDropdownBasic(parent);
 }
+
