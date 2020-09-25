@@ -27,10 +27,10 @@ CalibrationDropdownBasic::CalibrationDropdownBasic(QWidget *parent)
 
     auto g = this->rotation_value_label;
     QObject::connect(rotation_slider, &QSlider::valueChanged, [g, x, v](int value) {
-        g->setNum(value * 3);
+        g->setNum(value);
     });
-    rotation_slider->setRange(0, 10);
-    rotation_slider->setValue(4);
+    rotation_slider->setRange(0, 60);
+    rotation_slider->setValue(10);
 
     // right justify labels
     angle_label->setAlignment(Qt::AlignRight);
