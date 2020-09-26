@@ -62,6 +62,14 @@ ScanDropdownBasic::ScanDropdownBasic(QWidget *parent)
     sec->setContentLayout(*section_layout);
 }
 
+int ScanDropdownBasic::get_rotation_slider_value() {
+    return rotation_slider->value();
+}
+
+int ScanDropdownBasic::get_angle_slider_value() {
+    return angle_slider->value();
+}
+
 
 // --------------------------------------------------------------------------------
 //                          QCustomWidget methods

@@ -35,6 +35,10 @@ signals:
 public:
     explicit ScanDropdownBasic(QWidget *parent = 0);
 
+    int get_rotation_slider_value();
+
+    int get_angle_slider_value();
+
     QString name() const;
 
     QString includeFile() const;
