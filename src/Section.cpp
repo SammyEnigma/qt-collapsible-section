@@ -128,5 +128,5 @@ bool Section::isContainer() const
 
 QWidget *Section::createWidget(QWidget *parent)
 {
-    return new Section("", 100, parent);
+    return new Section( parent);
 }

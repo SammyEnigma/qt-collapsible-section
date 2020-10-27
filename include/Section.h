@@ -44,7 +44,7 @@ private:
     QParallelAnimationGroup* toggleAnimation;
     QScrollArea* contentArea;
     int animationDuration = 100;
-    QString title = "Section"
+    QString title = "Section";
 
 
 public slots:

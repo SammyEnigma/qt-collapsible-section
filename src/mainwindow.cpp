@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    Section* section = new Section("Section", 300, ui->centralWidget);
+    Section* section = new Section(ui->centralWidget);
     ui->centralWidget->layout()->addWidget(section);
 
     auto* anyLayout = new QVBoxLayout();

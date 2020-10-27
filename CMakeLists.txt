@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(qt_collapsible_section)
 
-option(BUILD_SWAG_SCANNER_WIDGETS "Build swagscanner widgets" OFF)
+option(BUILD_SWAG_SCANNER_WIDGETS "Build swagscanner widgets" ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(Qt5_DIR "/usr/local/opt/qt/lib/cmake/Qt5")
@@ -23,18 +23,10 @@ if (BUILD_SWAG_SCANNER_WIDGETS)
     add_subdirectory(swagscanner_widgets)
 
 else ()
-    include_directories(.)
+    include_directories(include)
 
-    add_library(qt_collapsible_section SHARED
-            Section.cpp
-            Section.h)
+    add_subdirectory(src)
 
-    target_link_libraries(qt_collapsible_section Qt5::Quick Qt5::Core Qt5::Widgets Qt5::Designer)
-    add_executable(exe main.cpp mainwindow.h mainwindow.cpp mainwindow.ui)
-    target_link_libraries(exe qt_collapsible_section)
-    install(TARGETS qt_collapsible_section
-            DESTINATION ${QT_INSTALL_PLUGINS}/designer
-            )
 endif ()
 
 
