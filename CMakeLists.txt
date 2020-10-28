@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(qt_collapsible_section)
 
 option(BUILD_SWAG_SCANNER_WIDGETS "Build swagscanner widgets" ON)
+set(BUILD_SWAG_SCANNER_WIDGETS ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(Qt5_DIR "/usr/local/opt/qt/lib/cmake/Qt5")
